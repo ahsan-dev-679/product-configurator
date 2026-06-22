@@ -19,7 +19,7 @@ product-configurator/
 
 1. Clone the repository:
 ```bash
-   git clone <repository-url>
+   git clone https://github.com/ahsan-dev-679/product-configurator.git
    cd product-configurator
 ```
 
