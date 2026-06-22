@@ -33,6 +33,10 @@ product-configurator/
    - **Backend API:** http://localhost:3001/api
    - **Products endpoint:** http://localhost:3001/api/products
 
+
+   ![Dashboardt](image.png)
+   ![API](image-1.png)
+
 ## Features
 
 - **Auto-Code Generation:** Product names are automatically converted to codes (e.g., "Tankdeckel" → "TD")
