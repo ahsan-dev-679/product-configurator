@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: configurator-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - configurator-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: configurator-backend
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/configurator
+      - PORT=3001
+    depends_on:
+      - mongodb
+    networks:
+      - configurator-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: configurator-frontend
+    ports:
+      - "3000:3000"
+    environment:
+     - NEXT_PUBLIC_API_URL=http://localhost:3001/api
+    depends_on:
+      - backend
+    networks:
+      - configurator-network
+
+networks:
+  configurator-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
