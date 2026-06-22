@@ -34,8 +34,13 @@ product-configurator/
    - **Products endpoint:** http://localhost:3001/api/products
 
 
-   ![Dashboardt](image.png)
-   ![API](image-1.png)
+ ## Screenshots
+
+### Frontend Dashboard
+![Dashboard](screenshots/image.png)
+
+### Backend API
+![API](screenshots/image-1.png)
 
 ## Features
 
